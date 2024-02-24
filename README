@@ -1,0 +1,104 @@
+# DESCRIPTION
+
+This project is used to print the process tree in Linux (like `pstree` command in Linux).
+
+# HOW TO USE
+
+This project provide a shell for you to conveniently generate **pstree** app.
+
+```bash
+sh build.sh && ./build/src/pstree
+```
+
+# Example
+
+```bash
+joel@DESKTOP-H42OHK2:~/Code/M1$ bash build.sh && ./build/src/pstree
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/joel/Code/M1/build
+[ 33%] Building C object src/CMakeFiles/pstree.dir/pstree.c.o
+[ 66%] Building C object src/CMakeFiles/pstree.dir/variable_array.c.o
+[100%] Linking C executable pstree
+[100%] Built target pstree
+complete_children_of_each_process ok
+systemd(1)
+        init-systemd(Ub(2)
+                init(5)
+                login(345)
+                        bash(377)
+                SessionLeader(392)
+                        Relay(394)(393)
+                                sh(394)
+                                        sh(395)
+                                                sh(400)
+                                                        node(404)
+                                                                node(482)
+                                                                node(495)
+                                                                        cpptools(577)
+                                                                        node(806)
+                                                                        node(27538)
+                                                                node(524)
+                                                                        node(798)
+                                                                node(525)
+                                                                node(636)
+                                                                        bash(656)
+                                cpptools-srv(1146)
+                                cpptools-srv(5144)
+                SessionLeader(419)
+                        Relay(421)(420)
+                                node(421)
+                SessionLeader(449)
+                        Relay(456)(450)
+                                node(456)
+                SessionLeader(502)
+                        Relay(504)(503)
+                                node(504)
+                SessionLeader(515)
+                        Relay(517)(516)
+                                node(517)
+                SessionLeader(10802)
+                        Relay(10806)(10803)
+                                bash(10806)
+                                        pstree(28294)
+                SessionLeader(14717)
+                        Relay(14721)(14718)
+                                bash(14721)
+        systemd-journal(34)
+        systemd-udevd(54)
+        snapfuse(68)
+        snapfuse(69)
+        snapfuse(70)
+        snapfuse(73)
+        snapfuse(78)
+        snapfuse(81)
+        snapfuse(85)
+        snapfuse(86)
+        systemd-resolve(171)
+        cron(175)
+        dbus-daemon(177)
+        networkd-dispat(181)
+        rsyslogd(182)
+        snapd(183)
+        systemd-logind(184)
+        subiquity-serve(211)
+                python3.10(313)
+                        python3(786)
+        unattended-upgr(213)
+        agetty(216)
+        agetty(223)
+        systemd(371)
+                (sd-pam)(372)
+```
